@@ -1,0 +1,83 @@
+<!doctypehtml>
+<html lang=en>
+<meta charset=UTF-8>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>Certificate Generator</title>
+<link href="{{ url_for('static', filename='favicon.png') }}" rel=icon type=image/x-icon>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css rel=stylesheet>
+<style>
+    body {
+        background: linear-gradient(to right, #fbbd5e, #f9d423);
+        color: #000;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif
+    }
+
+    .container {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        padding: 30px;
+        margin-top: 50px;
+        max-width: 800px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .top-left-img,
+    .top-right-img {
+        width: 120px;
+        height: auto;
+        position: absolute;
+        top: 20px
+    }
+
+    .top-left-img {
+        left: 20px
+    }
+
+    .top-right-img {
+        right: 20px
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px
+    }
+
+    form {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .form-group {
+        margin-bottom: 20px
+    }
+
+    @media (max-width:768px) {
+        .container {
+            padding: 20px;
+            margin-top: 20px
+        }
+        .top-left-img,
+        .top-right-img {
+            width: 80px
+        }
+        h1 {
+            font-size: 1.8rem
+        }
+    }
+</style>
+<div class=container><img alt="Left Image" class=top-left-img src="{{ url_for('static', filename='i1.png') }}"> <img alt="Right Image" class=top-right-img src="{{ url_for('static', filename='i2.JPG') }}">
+    <h1 class=mt-5>Certificate Generator</h1>
+    <form action=/generate_certificate method=post>
+        <div class=form-group><label for=recipient_name>Recipient Name:</label> <input class=form-control id=recipient_name name=recipient_name required></div>
+        <div class=form-group><label for=location>Location:</label> <input class=form-control id=location name=location required></div>
+        <div class=form-group><label for=district>District:</label> <input class=form-control id=district name=district required></div>
+        <div class=form-group><label for=UserID>User ID:</label> <input class=form-control id=UserID name=UserID required></div>
+        <div class=form-group><label for=Issued_Date>Issued Date:</label> <input class=form-control id=Issued_Date name=Issued_Date required></div><button class="btn btn-primary" type=submit>Generate Certificate</button></form>
+</div>

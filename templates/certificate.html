@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>Certificate Details</title>
+    <link href="{{ url_for('static', filename='favicon.png') }}"rel=icon type=image/x-icon><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css rel=stylesheet>
+    <style>
+        body {
+            background: linear-gradient(to right, #fbbd5e, #f9d423);
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 50px;
+            max-width: 800px;
+            position: relative;
+        }
+        .certificate-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 1;
+        }
+        .top-left-img,
+        .top-right-img {
+            position: absolute;
+            top: 20px;
+            width: 120px;
+            height: auto;
+            z-index: 0;
+        }
+        .top-left-img {
+            left: 20px;
+        }
+        .top-right-img {
+            right: 20px;
+        }
+        h1.text-center {
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: 20px;
+                max-width: 100%;
+            }
+            .top-left-img,
+            .top-right-img {
+                width: 80px;
+                top: 10px;
+            }
+            .top-left-img {
+                left: 10px;
+            }
+            .top-right-img {
+                right: 10px;
+            }
+            .certificate-img {
+                margin-top: 10px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <div class="container">
+        <img alt="Left Image" class="top-left-img" src="{{ url_for('static', filename='i1.png') }}" /> <img alt="Right Image" class="top-right-img" src="{{ url_for('static', filename='i2.JPG') }}" />
+        <h1 class="text-center mt-5">Certificate Details</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Recipient Name:</strong> {{ recipient_name }}</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Location:</strong> {{ location }}</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>District:</strong> {{ district }}</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Issued Date:</strong> {{ Issued_Date }}</p>
+            </div>
+            <div class="col-md-12">
+                <p><strong>Authorized for the Lorem Ipsum franchise under Lorem Ipsum  Company.</strong></p>
+            </div>
+            <div class="col-md-12 text-center"><img alt="Certificate" class="certificate-img" src="{{ certificate_url }}" /></div>
+        </div>
+    </div>
+</html>
